@@ -4,10 +4,9 @@ from scenebase import SceneBase
 from color import *
 
 
-# Scene designed to load and work with any level
+# The main game scene
 class GameScene(SceneBase):
     def __init__(self):
-        '''The main game scene.'''
         SceneBase.__init__(self)
 
         font_vt323_24 = py_freetype.Font("assets\\fonts\\VT323-Regular.ttf", 24)

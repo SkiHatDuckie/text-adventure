@@ -11,11 +11,13 @@ def main(width, height, fps):
     py.display.set_caption("Text Adventure")
     clock = py.time.Clock()
 
+    # Assigns each game scene to an index.
     scene_ids = {
         0: GameScene,
     }
     active_scene = scene_ids[0]()
 
+    # Game loop
     quit_attempt = False
     while not quit_attempt:
         pressed_keys = py.key.get_pressed()
@@ -36,10 +38,12 @@ def main(width, height, fps):
             if not quit_attempt:
                 filtered_events.append(event)
 
+        # Update active scene
         active_scene.processInput(filtered_events, pressed_keys, pressed_mouse)
         active_scene.update()
         active_scene.render(screen)
 
+        # Update display
         py.display.flip()
         clock.tick(fps)
 
