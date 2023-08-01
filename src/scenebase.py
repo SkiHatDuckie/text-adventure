@@ -16,5 +16,5 @@ class SceneBase:
         self.next = scene_id
 
     def terminate(self):
-        self.switchToScene(None)
+        self.switch_scene(None)
         print("app terminated")
