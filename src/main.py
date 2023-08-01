@@ -39,7 +39,7 @@ def main(width, height, fps):
                 filtered_events.append(event)
 
         # Update active scene
-        active_scene.processInput(filtered_events, pressed_keys, pressed_mouse)
+        active_scene.process_input(filtered_events, pressed_keys, pressed_mouse)
         active_scene.update()
         active_scene.render(screen)
 

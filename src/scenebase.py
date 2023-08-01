@@ -12,7 +12,7 @@ class SceneBase:
     def render(self, screen):
         print("oh noes!, you didn't override this in the child class")
 
-    def switchToScene(self, scene_id):
+    def switch_scene(self, scene_id):
         self.next = scene_id
 
     def terminate(self):
