@@ -21,9 +21,6 @@ class GameScene(SceneBase):
         pass
 
     def render(self, screen):
-        screen_width, screen_height = screen.get_size()
+        # screen_width, screen_height = screen.get_size()
 
         screen.fill(BG_COLOR1)
-        draw_text(screen, self.game_title, FG_COLOR,
-                  (10, 10, screen_width - 10, screen_height - 10),
-                  self.font_vt323_24)
