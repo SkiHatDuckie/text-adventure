@@ -2,7 +2,7 @@ import pygame as py
 
 
 class Button:
-    def __init__(self, text, font, fontColor, x, y, w, h, ic, ac):
+    def __init__(self, text, font, fontColor, x, y, w, h, ic, ac, action):
         super().__init__()
         py.init()
 
@@ -14,8 +14,8 @@ class Button:
         self.ac = ac
         self.rectColor = self.ic
 
+        self.action = action
         self.hovered = False
-        self.pressed = False
 
     def check_for_hover(self):
         self.mPosX, self.mPosY = py.mouse.get_pos()
@@ -24,13 +24,11 @@ class Button:
         else:
             self.hovered = False
 
-    def check_for_press(self):
-        self.pressed = self.hovered
+    def on_mouse_up(self, *args):
+        if self.hovered:
+            return self.action(args)
 
-    def consume_pressed(self) -> bool:
-        temp = self.pressed
-        self.pressed = False
-        return temp
+        return -1
 
     def update(self):
         if self.hovered:

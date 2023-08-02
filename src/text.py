@@ -10,7 +10,7 @@ def draw_text(surface, text, color, rect, font):
     line_spacing = -2
 
     # Get the height of the font
-    font_height = font.render("Tg")[1][1]
+    font_height = font.render("Tg")[1].height
 
     while text:
         i = 1
@@ -20,7 +20,7 @@ def draw_text(surface, text, color, rect, font):
             break
 
         # Determine maximum width of line
-        while font.render(text[:i])[1][0] < rect.width and i < len(text):
+        while font.render(text[:i])[1].width < rect.width and i < len(text):
             i += 1
 
         # If we've wrapped the text, then adjust the wrap to the last word      
