@@ -8,7 +8,7 @@ def main(width, height, fps):
     py.init()
     py_freetype.init()
     screen = py.display.set_mode((width, height))
-    py.display.set_caption("Text Adventure")
+    py.display.set_caption("Rat Chronicles Based Adventure DLC Part 2")
     clock = py.time.Clock()
 
     # Assigns each game scene to an index.
