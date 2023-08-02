@@ -4,6 +4,10 @@ class Character:
         self.health = health
         self.level = level
         self.moveset = moveset
+        self.exp = 0
+
+    def check_for_level(self, exp_cap):
+        pass
 
 
 # TODO: Add bleed effect
