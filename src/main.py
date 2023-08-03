@@ -40,7 +40,8 @@ def main(width, height, fps):
 
         # Update active scene
         active_scene.process_input(filtered_events, pressed_keys, pressed_mouse)
-        active_scene.update()
+        if active_scene.update() == -2:
+            quit_attempt = True
         active_scene.render(screen)
 
         # Update display

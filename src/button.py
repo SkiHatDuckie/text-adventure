@@ -28,7 +28,7 @@ class Button:
         if self.hovered:
             return self.action(args)
 
-        return -1
+        return None
 
     def update(self):
         if self.hovered:
